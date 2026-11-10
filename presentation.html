@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Презентация — Лендинг «Кофе и точка»</title>
+  <style>
+    :root { --bg:#1f1713; --card:#fffaf4; --accent:#8b4a2b; --accent2:#d9b38c; --text:#2b1d14; --muted:#6b5648; }
+    *{box-sizing:border-box} html,body{height:100%;margin:0}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:#2a211c;color:#fff;overflow:hidden}
+    .deck{height:100vh;overflow-y:auto;scroll-snap-type:y mandatory;scroll-behavior:smooth}
+    .slide{min-height:100vh;scroll-snap-align:start;display:flex;align-items:center;justify-content:center;padding:48px}
+    .card{width:min(1100px,100%);min-height:72vh;background:var(--card);color:var(--text);border-radius:24px;padding:48px 56px;box-shadow:0 30px 80px rgba(0,0,0,.35);position:relative}
+    .num{position:absolute;top:20px;right:28px;color:var(--muted);font-weight:600}
+    h1{font-size:clamp(2rem,4vw,3.2rem);margin:0 0 12px;line-height:1.15;color:#1f1713}
+    h2{font-size:clamp(1.5rem,2.6vw,2.2rem);margin:0 0 18px;color:#1f1713}
+    h3{margin:18px 0 8px;color:var(--accent);font-size:1.15rem}
+    p,li{font-size:1.12rem;line-height:1.55}
+    .lead{font-size:1.25rem;color:var(--muted);max-width:70ch}
+    .tag{display:inline-block;background:var(--accent);color:#fff;padding:6px 12px;border-radius:999px;font-weight:600;margin-bottom:14px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:10px}
+    .box{background:#fff;border:1px solid #e6d7c7;border-radius:16px;padding:18px 20px}
+    .box h3{margin-top:0}
+    ul{margin:8px 0 0 1.2rem;padding:0}
+    li{margin:6px 0}
+    table{width:100%;border-collapse:collapse;margin-top:10px;font-size:1.02rem}
+    th,td{border:1px solid #e6d7c7;padding:10px 12px;text-align:left;vertical-align:top}
+    th{background:#f3e7d8}
+    .good{background:#eef7f1;font-weight:600}
+    .muted{color:var(--muted)}
+    .score{font-size:1.6rem;font-weight:800;color:var(--accent)}
+    .center{display:flex;flex-direction:column;justify-content:center;min-height:55vh}
+    .kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+    .kpi .box{text-align:center}
+    .kpi b{display:block;font-size:1.6rem;color:var(--accent)}
+    .footer-note{position:absolute;left:56px;bottom:24px;color:var(--muted);font-size:.95rem}
+    .nav-hint{position:fixed;right:16px;bottom:16px;background:rgba(0,0,0,.45);color:#fff;padding:8px 12px;border-radius:10px;font-size:.9rem}
+    @media (max-width:900px){.slide{padding:20px}.card{padding:28px;min-height:auto}.grid,.kpi{grid-template-columns:1fr}.footer-note{position:static;margin-top:18px}}
+    @media print{body{overflow:visible;background:#fff}.deck{overflow:visible;height:auto}.slide{min-height:0;page-break-after:always;padding:0}.card{box-shadow:none;border:1px solid #ddd;border-radius:0;min-height:0}.nav-hint{display:none}}
+  </style>
+</head>
+<body>
+  <div class="deck">
+    <section class="slide">
+      <div class="card center">
+        <span class="num">1 / 8</span>
+        <span class="tag">ДЗ №1 — Лендинг</span>
+        <h1>«Кофе и точка»</h1>
+        <p class="lead">Презентация лендинга кофейни: анализ 2 конкурентов, сравнение и вывод, почему наш сайт эффективнее для привлечения и сбора заявок.</p>
+        <div class="kpi">
+          <div class="box"><b>8</b>слайдов</div>
+          <div class="box"><b>2</b>конкурента в анализе</div>
+          <div class="box"><b>1</b>цель — заявка за 1–2 клика</div>
+        </div>
+        <p class="footer-note">Проект: простой лендинг (index.html, style.css, script.js), SEO/GEO, форма заявок.</p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="card">
+        <span class="num">2 / 8</span>
+        <h2>Цель сайта и что важно клиенту</h2>
+        <div class="grid">
+          <div class="box">
+            <h3>Задача лендинга</h3>
+            <ul>
+              <li>Быстро объяснить, что это за кофейня, где она и когда работает.</li>
+              <li>Показать меню и понятные цены без лишних шагов.</li>
+              <li>Дать удобный способ оставить заявку (предзаказ, бронь, вопрос).</li>
+              <li>Быть видимым в поиске и понятным для ИИ-поиска (Алиса, ChatGPT).</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>Что ценит гость кофейни «с собой»</h3>
+            <ul>
+              <li><b>Скорость:</b> не тратить время на поиск информации и очереди.</li>
+              <li><b>Понятность:</b> цены, адрес, режим работы, как заказать.</li>
+              <li><b>Честность:</b> без скрытых доплат (например, за растительное молоко).</li>
+              <li><b>Качество:</b> свежая обжарка и стабильный вкус.</li>
+            </ul>
+          </div>
+        </div>
+        <p class="footer-note">Вывод: сайт должен вести пользователя от первого экрана к заявке без перегрузки.</p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="card">
+        <span class="num">3 / 8</span>
+        <h2>Конкурент 1 — крупная сетевая кофейня</h2>
+        <p class="muted">Пример: сайты/приложения крупных сетей (типовой подход Starbucks, Cofix, «Шоколадница»).</p>
+        <div class="grid">
+          <div class="box">
+            <h3>Сильные стороны (оценка: 8/10)</h3>
+            <ul>
+              <li>Узнаваемый бренд, доверие и единый стиль.</li>
+              <li>Развитая программа лояльности и мобильные приложения.</li>
+              <li>Качественный визуал, промо и большие каталоги.</li>
+              <li>Хорошая техническая инфраструктура и охват.</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>Слабые стороны для локального гостя (оценка: 6/10)</h3>
+            <ul>
+              <li>Более высокая цена напитков и доплаты за альтернативное молоко/сиропы.</li>
+              <li>Много разделов и шагов — сложнее быстро «заказать рядом».</li>
+              <li>Ожидание в часы пик часто выше из‑за потока.</li>
+              <li>Локальная информация (конкретная точка, быстрый предзаказ) может быть неочевидна.</li>
+            </ul>
+          </div>
+        </div>
+        <p><b>Итоговая оценка как прямого локального решения:</b> <span class="score">7/10</span></p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="card">
+        <span class="num">4 / 8</span>
+        <h2>Конкурент 2 — локальная кофейня «у дома»</h2>
+        <p class="muted">Пример: небольшая районная кофейня с типовым сайтом-визиткой или страницей в соцсетях/картах.</p>
+        <div class="grid">
+          <div class="box">
+            <h3>Сильные стороны (оценка: 7/10)</h3>
+            <ul>
+              <li>Близость, «свой» формат и личный контакт.</li>
+              <li>Часто более гибкие цены, чем у крупных сетей.</li>
+              <li>Простое меню и быстрая выдача в спокойные часы.</li>
+              <li>Атмосфера и лояльность постоянных гостей.</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>Слабые стороны (оценка: 5/10)</h3>
+            <ul>
+              <li>Сайт часто устаревший: нет удобной навигации, формы или актуальных цен.</li>
+              <li>Слабое SEO/GEO — сложнее найти в поиске и ИИ-ответах.</li>
+              <li>Нет быстрого онлайн-предзаказа, только звонок/мессенджер.</li>
+              <li>Нерегулярная коммуникация преимуществ (свежесть обжарки, условия).</li>
+            </ul>
+          </div>
+        </div>
+        <p><b>Итоговая оценка онлайн-присутствия:</b> <span class="score">6/10</span></p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="card">
+        <span class="num">5 / 8</span>
+        <h2>Сравнение по ключевым критериям</h2>
+        <table>
+          <thead>
+            <tr><th>Критерий</th><th>«Кофе и точка» (наш сайт)</th><th>Крупные сети</th><th>Локальные кофейни</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Понятная навигация и путь к действию</td><td class="good">Якорное меню, CTA, «Заказать» → форма</td><td>Много разделов/приложение</td><td>Часто слабая структура</td></tr>
+            <tr><td>Сбор заявок онлайн</td><td class="good">Форма на сайте → Google Таблица</td><td>Через приложение/аккаунт</td><td>Обычно звонок/лично</td></tr>
+            <tr><td>SEO и GEO / понятность для ИИ</td><td class="good">Meta, OG, geo, Schema.org, чёткие факты</td><td>Сильно, но не локально-точечно</td><td>Часто минимально</td></tr>
+            <tr><td>Цена и прозрачность</td><td class="good">Капучино 190 ₽, молоко без доплаты</td><td>Выше, есть доплаты</td><td>По-разному, не всегда на сайте</td></tr>
+            <tr><td>Скорость получения кофе</td><td class="good">~2 мин + предзаказ</td><td>3–5 мин в пик</td><td>3–4 мин</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="card">
+        <span class="num">6 / 8</span>
+        <h2>Почему наш лендинг лучше</h2>
+        <div class="grid">
+          <div class="box">
+            <h3>Удобство и конверсия</h3>
+            <ul>
+              <li>Фиксированная навигация по разделам — легко найти меню, контакты, форму.</li>
+              <li>Все кнопки работают: переходы, заказ позиции из меню, звонок, карта, Telegram.</li>
+              <li>Форма заявки с валидацией и понятным статусом — минимум трения до обращения.</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>Видимость и доверие</h3>
+            <ul>
+              <li>SEO-метаданные и GEO/Schema.org помогают поиску и ИИ-сервисам понимать адрес, часы, услуги и преимущества.</li>
+              <li>На странице явно показаны выгоды: свежая обжарка, 2 минуты, честные цены, молоко без доплаты.</li>
+              <li>Простой, быстрый и адаптивный сайт (HTML/CSS/JS) без лишней сложности.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="card">
+        <span class="num">7 / 8</span>
+        <h2>Что взято у конкурентов и что улучшено</h2>
+        <div class="grid">
+          <div class="box">
+            <h3>Взято как сильные практики</h3>
+            <ul>
+              <li><b>У сетей:</b> аккуратная структура блоков, акцент на меню/ценах, доверие через понятные факты и брендинг.</li>
+              <li><b>У локальных:</b> камерность, простота предложения, фокус на «рядом и быстро».</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>Улучшено в «Кофе и точка»</h3>
+            <ul>
+              <li>Вместо сложного приложения — <b>простая форма предзаказа на сайте</b>.</li>
+              <li>Вместо скрытых доплат — <b>прозрачные цены и молоко без доплаты</b>.</li>
+              <li>Вместо слабого онлайн-присутствия — <b>SEO/GEO и структурированные данные</b>.</li>
+              <li>Вместо перегруженности — <b>быстрый путь: меню → заявка</b>.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="card">
+        <span class="num">8 / 8</span>
+        <h2>Вывод</h2>
+        <div class="box">
+          <p>По результатам оценки двух типов конкурентов:</p>
+          <ul>
+            <li><b>Крупная сетевая кофейня</b> сильна брендом и инфраструктурой, но уступает в локальной простоте, цене и скорости предзаказа без приложения (итоговая локальная оценка — <b>7/10</b>).</li>
+            <li><b>Локальная кофейня «у дома»</b> близка и понятна гостю, но часто проигрывает в качестве сайта, SEO/GEO и онлайн-сборе заявок (оценка онлайн-присутствия — <b>6/10</b>).</li>
+          </ul>
+          <p><b>Лендинг «Кофе и точка» объединяет сильные стороны обоих:</b> понятность и доверие уровня сильного бренда с простотой и скоростью локальной кофейни. За счёт удобной навигации, рабочей формы заявок, SEO/GEO-описания и явно сформулированных преимуществ сайт лучше решает задачу — быстро привести клиента к обращению и заказу.</p>
+          <p class="score" style="margin-top:10px;">Итог: оптимальный вариант для локальной кофейни — 9/10 по соответствию задаче.</p>
+        </div>
+        <p class="footer-note">Оценки конкурентных подходов обобщённые, для учебного сравнения модели сайтов и сервиса.</p>
+      </div>
+    </section>
+  </div>
+  <div class="nav-hint">Прокрутка / ↓↑ / PageDown — листать слайды</div>
+</body>
+</html>
