@@ -45,12 +45,31 @@ function doGet() {
 function parsePayload_(e) {
   if (!e) return {};
   if (e.postData && e.postData.contents) {
+    var contents = e.postData.contents;
     var type = (e.postData.type || "").toLowerCase();
-    if (type.indexOf("application/json") !== -1) {
-      try { return JSON.parse(e.postData.contents) || {}; } catch (_) {}
+
+    // JSON (в т.ч. отправленный как text/plain, чтобы избежать CORS preflight)
+    if (type.indexOf("application/json") !== -1 || type.indexOf("text/plain") !== -1 || contents.charAt(0) === "{") {
+      try { return JSON.parse(contents) || {}; } catch (_) {}
+    }
+
+    // application/x-www-form-urlencoded в теле
+    if (type.indexOf("application/x-www-form-urlencoded") !== -1) {
+      try {
+        var params = contents.split("&");
+        var obj = {};
+        params.forEach(function (pair) {
+          if (!pair) return;
+          var idx = pair.indexOf("=");
+          var k = idx >= 0 ? pair.slice(0, idx) : pair;
+          var v = idx >= 0 ? pair.slice(idx + 1) : "";
+          obj[decodeURIComponent(k.replace(/\+/g, " "))] = decodeURIComponent(v.replace(/\+/g, " "));
+        });
+        return obj;
+      } catch (_) {}
     }
   }
-  // Поддержка form-encoded отправки
+  // Поддержка form-encoded отправки через e.parameter
   return (e && e.parameter) ? e.parameter : {};
 }
 
