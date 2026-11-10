@@ -91,12 +91,18 @@ function setupForm() {
     try {
       const saved = saveLocal(data);
       if (FORM_ENDPOINT) {
+        // Отправляем как text/plain, чтобы избежать CORS preflight при запросе к Google Apps Script
         const res = await fetch(FORM_ENDPOINT, {
           method: "POST",
-          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
           body: JSON.stringify(data),
         });
-        if (!res.ok) throw new Error("Request failed");
+        const text = await res.text();
+        let payload = null;
+        try { payload = text ? JSON.parse(text) : null; } catch (_) {}
+        if (!res.ok || (payload && payload.ok === false)) {
+          throw new Error((payload && payload.error) || "Request failed");
+        }
         status.textContent = `Спасибо, ${data.name}! Заявка №${saved.id} отправлена. Мы свяжемся с вами в ближайшее время.`;
       } else {
         status.textContent = `Спасибо, ${data.name}! Заявка №${saved.id} сохранена локально (demo). Чтобы собирать заявки в Google Таблицу/Telegram, укажите FORM_ENDPOINT в script.js.`;
