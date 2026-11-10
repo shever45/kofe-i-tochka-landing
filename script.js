@@ -2,7 +2,7 @@
 // 1) Formspree: создайте форму на https://formspree.io и вставьте URL вида https://formspree.io/f/xxxxxxx
 // 2) Google Sheets: создайте веб-приложение Apps Script и вставьте его URL
 // Оставьте пустым, чтобы заявки сохранялись локально в браузере (demo-режим).
-const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbz_8bo21AfZzMnpDqnVsAJl-nNdu6R96d0OW7mRHzdjgOuEDmwBal6zeqhTxKJlB48iww/exec";
+const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbx9BCF-demMvJWlz-kCYOEU6e1oqEfF3b1bq7fOTL7xq4Jr3PywSao9oJFvYLMmRq_2VQ/exec";
 
 document.addEventListener("DOMContentLoaded", () => {
   const yearEl = document.getElementById("year");
